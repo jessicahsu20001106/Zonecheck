@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="zc-settings-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zonecheck Settings</title>
+  <link rel="stylesheet" href="../fonts.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="zc-settings-page">
+  <header class="zc-header">
+    <div class="zc-header-nav" aria-hidden="true"></div>
+    <span class="zc-title">Settings</span>
+    <div class="zc-header-actions" aria-hidden="true"></div>
+  </header>
+
+  <main class="zc-settings-body">
+    <div class="zc-settings-group">
+      <label class="zc-settings-label" for="apiKey">Claude API key</label>
+      <div class="zc-settings-api-key">
+        <input class="zc-settings-input zc-settings-input--mono" type="password" id="apiKey" placeholder="sk-ant-api03-…" autocomplete="off" spellcheck="false">
+        <button class="zc-settings-toggle-key" id="toggleKey" title="Show/hide key" type="button" aria-label="Show or hide API key">👁</button>
+      </div>
+      <p class="zc-settings-hint">Get a key at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>. Stored locally in your browser — never sent anywhere except Anthropic's API.</p>
+    </div>
+
+    <div class="zc-settings-group">
+      <label class="zc-settings-label" for="userReplyName">Your name (reply sign-offs)</label>
+      <input class="zc-settings-input" type="text" id="userReplyName" placeholder="e.g. Jessica or Jessica Hsu" autocomplete="name" spellcheck="false">
+      <p class="zc-settings-hint">Used for Formal and Warm drafts after “Best,” — not shown in Brief.</p>
+    </div>
+
+    <div class="zc-settings-group">
+      <span class="zc-settings-label">Your timezone</span>
+      <div id="timezonePickerMount" class="zc-timezone-picker-host"></div>
+      <p class="zc-settings-hint" id="tzDetected">Auto-detected from browser.</p>
+    </div>
+
+    <div class="zc-settings-group">
+      <span class="zc-settings-label">Business hours</span>
+      <div class="zc-settings-hours">
+        <select class="zc-settings-input" id="bhStart"></select>
+        <span class="zc-settings-hours-sep">to</span>
+        <select class="zc-settings-input" id="bhEnd"></select>
+      </div>
+      <p class="zc-settings-hint">Used to flag times outside your working hours.</p>
+    </div>
+
+    <div class="zc-settings-status" id="statusMsg" role="status"></div>
+  </main>
+
+  <footer class="zc-settings-footer">
+    <button class="zc-btn zc-btn-yes-soft" id="saveBtn" type="button">Save settings</button>
+  </footer>
+
+  <p class="zc-settings-footnote">Zonecheck v1.0 — <a href="https://github.com" target="_blank">Privacy policy</a></p>
+
+  <script src="../tz-picker-shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

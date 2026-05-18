@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zonecheck Preview</title>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f0f0f0;
+    font-family: var(--zc-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 40px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  /* Demo only: real extension uses fixed overlays */
+  .zc-popover {
+    position: relative !important;
+    inset: unset !important;
+    z-index: 1 !important;
+  }
+
+  .label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #999;
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <div class="label">Step 1 — Time conversion</div>
+  <div class="zc-popover zc-popover-step1">
+    <div class="zc-header">
+      <div class="zc-header-nav" aria-hidden="true"></div>
+      <span class="zc-title">Zonecheck</span>
+      <div class="zc-header-actions">
+        <button class="zc-close">×</button>
+      </div>
+    </div>
+    <div class="zc-step2-body">
+      <div class="zc-step2-hero">
+        <div class="zc-step2-hero-side">
+          <div class="zc-step2-hero-rail zc-step2-hero-rail-left">
+          <div class="zc-step2-who">Amy</div>
+          <div class="zc-step2-time-large zc-step2-their-clock">2:00 PM</div>
+          <div class="zc-step2-meta">
+            <div class="zc-step2-date">Thu Jan 16</div>
+            <span class="zc-step2-source-pill zc-source-pill-detected">Detected from email</span>
+          </div>
+          <div class="zc-tz-picker" data-tz-disabled="1" data-which="their" data-tz="America/New_York" aria-label="Their timezone"><button type="button" class="zc-tz-picker-trigger" disabled aria-expanded="false" aria-haspopup="listbox" aria-label="Their timezone"><span class="zc-tz-picker-label">(GMT-05:00) Eastern Time (US &amp; Canada)</span></button><div class="zc-tz-picker-panel" hidden><input type="search" class="zc-tz-picker-search" disabled aria-label="Search time zones" /><ul class="zc-tz-picker-list" role="listbox"></ul></div></div>
+          </div>
+        </div>
+        <div class="zc-step2-hero-side zc-step2-hero-right">
+          <div class="zc-step2-hero-rail zc-step2-hero-rail-right">
+          <div class="zc-step2-who">You</div>
+          <div class="zc-step2-time-large zc-step2-your-clock">11:00 AM</div>
+          <div class="zc-step2-meta">
+            <div class="zc-step2-date">Thu Jan 16</div>
+            <span class="zc-step2-source-pill zc-source-pill-settings">From settings</span>
+          </div>
+          <div class="zc-tz-picker" data-tz-disabled="1" data-which="your" data-tz="America/Los_Angeles" aria-label="Your timezone"><button type="button" class="zc-tz-picker-trigger" disabled aria-expanded="false" aria-haspopup="listbox" aria-label="Your timezone"><span class="zc-tz-picker-label">(GMT-08:00) Pacific Time (US &amp; Canada)</span></button><div class="zc-tz-picker-panel" hidden><input type="search" class="zc-tz-picker-search" disabled aria-label="Search time zones" /><ul class="zc-tz-picker-list" role="listbox"></ul></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="zc-timeline-wrap">
+        <div class="zc-timeline-day zc-timeline-day-step2">
+          <div class="zc-timeline-day-label">Thu Jan 16</div>
+          <div class="zc-timeline-with-ticks">
+            <div class="zc-ticks-above" aria-hidden="true">
+              <span class="zc-tick zc-tick-above" style="left:0%">12am</span>
+              <span class="zc-tick zc-tick-above" style="left:25%">6am</span>
+              <span class="zc-tick zc-tick-above" style="left:50%">12pm</span>
+              <span class="zc-tick zc-tick-above" style="left:75%">6pm</span>
+              <span class="zc-tick zc-tick-above" style="left:100%">12am</span>
+            </div>
+            <div class="zc-timeline zc-timeline-step2-track">
+              <div class="zc-bh-inactive zc-bh-step2" style="left:0;width:37.5%"></div>
+              <div class="zc-bh-inactive zc-bh-step2" style="left:75%;width:25%"></div>
+              <div class="zc-bh-overlap-highlight zc-bh-step2" style="left:37.5%;width:37.5%"></div>
+              <div class="zc-timeline-marker-lines-clip">
+              <div class="zc-marker zc-marker-green zc-marker-step2" style="left:45.8%">
+                <div class="zc-marker-line"></div>
+                <div class="zc-marker-label">11am</div>
+              </div>
+              <div class="zc-marker zc-marker-blue zc-marker-step2" style="left:58.3%">
+                <div class="zc-marker-line"></div>
+                <div class="zc-marker-label">2pm</div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="zc-step2-legend">
+        <span class="zc-legend-item"><span class="zc-legend-line zc-legend-line-blue"></span> Amy</span>
+        <span class="zc-legend-item"><span class="zc-legend-line zc-legend-line-you"></span> You</span>
+        <span class="zc-legend-item"><span class="zc-legend-bh-swatch zc-legend-shared-hours-swatch"></span> Shared working hours</span>
+      </div>
+
+      <div class="zc-step2-hours-slot"></div>
+
+      <div class="zc-step2-footer zc-footer-three">
+        <button class="zc-btn zc-btn-yes-soft">Yes, works for me</button>
+        <button class="zc-btn zc-btn-no-soft">Can't make it</button>
+        <button class="zc-btn zc-btn-outline zc-btn-suggest-soft">Suggest another time</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="label">Step 2 — Suggest another time</div>
+  <div class="zc-popover zc-popover-step2">
+    <div class="zc-header">
+      <div class="zc-header-nav">
+        <button type="button" class="zc-back zc-text-btn" aria-label="Back">← Back</button>
+      </div>
+      <span class="zc-title">Zonecheck · Suggest another time</span>
+      <div class="zc-header-actions">
+        <button class="zc-close">×</button>
+      </div>
+    </div>
+    <div class="zc-step2-body">
+      <p class="zc-drag-hint"><span class="zc-drag-hint-ico" aria-hidden="true">↔</span> Drag the timeline to find a time that works for both</p>
+
+      <div class="zc-step2-hero">
+        <div class="zc-step2-hero-side">
+          <div class="zc-step2-hero-rail zc-step2-hero-rail-left">
+          <div class="zc-step2-who">Amy</div>
+          <div class="zc-step2-time-large zc-step2-their-clock">9:00 AM</div>
+          <div class="zc-step2-meta">
+            <div class="zc-step2-date">Fri Jan 16</div>
+            <span class="zc-step2-source-pill zc-source-pill-detected">Detected from email</span>
+          </div>
+          <div class="zc-tz-picker" data-which="their" data-tz="America/New_York" aria-label="Their timezone"><button type="button" class="zc-tz-picker-trigger" aria-expanded="false" aria-haspopup="listbox" aria-label="Their timezone"><span class="zc-tz-picker-label">(GMT-05:00) Eastern Time (US &amp; Canada)</span></button><div class="zc-tz-picker-panel" hidden><input type="search" class="zc-tz-picker-search" placeholder="Search time zones" aria-label="Search time zones" /><ul class="zc-tz-picker-list" role="listbox"><li class="zc-tz-picker-item zc-tz-picker-item-selected">(GMT-05:00) Eastern Time (US &amp; Canada)</li><li class="zc-tz-picker-item">(GMT-06:00) Central Time (US &amp; Canada)</li><li class="zc-tz-picker-item">(GMT-08:00) Pacific Time (US &amp; Canada)</li></ul></div></div>
+          </div>
+        </div>
+        <div class="zc-step2-hero-side zc-step2-hero-right">
+          <div class="zc-step2-hero-rail zc-step2-hero-rail-right">
+          <div class="zc-step2-who">You</div>
+          <div class="zc-step2-time-large zc-step2-your-clock">6:00 AM</div>
+          <div class="zc-step2-meta">
+            <div class="zc-step2-date">Fri Jan 16</div>
+            <span class="zc-step2-source-pill zc-source-pill-settings">From settings</span>
+          </div>
+          <div class="zc-tz-picker" data-which="your" data-tz="America/Los_Angeles" aria-label="Your timezone"><button type="button" class="zc-tz-picker-trigger" aria-expanded="false" aria-haspopup="listbox" aria-label="Your timezone"><span class="zc-tz-picker-label">(GMT-08:00) Pacific Time (US &amp; Canada)</span></button><div class="zc-tz-picker-panel" hidden><input type="search" class="zc-tz-picker-search" placeholder="Search time zones" aria-label="Search time zones" /><ul class="zc-tz-picker-list" role="listbox"><li class="zc-tz-picker-item zc-tz-picker-item-selected">(GMT-08:00) Pacific Time (US &amp; Canada)</li><li class="zc-tz-picker-item">(GMT-05:00) Eastern Time (US &amp; Canada)</li></ul></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="zc-timeline-wrap zc-interactive">
+        <div class="zc-timeline-day zc-timeline-day-step2">
+          <div class="zc-timeline-day-label">Fri Jan 16</div>
+          <div class="zc-timeline-with-ticks">
+            <div class="zc-ticks-above" aria-hidden="true">
+              <span class="zc-tick zc-tick-above" style="left:0%">12am</span>
+              <span class="zc-tick zc-tick-above" style="left:25%">6am</span>
+              <span class="zc-tick zc-tick-above" style="left:50%">12pm</span>
+              <span class="zc-tick zc-tick-above" style="left:75%">6pm</span>
+              <span class="zc-tick zc-tick-above" style="left:100%">12am</span>
+            </div>
+            <div class="zc-timeline zc-timeline-interactive zc-timeline-step2-track" style="cursor: ew-resize;">
+              <div class="zc-bh-inactive zc-bh-step2" style="left:0;width:37.5%"></div>
+              <div class="zc-bh-inactive zc-bh-step2" style="left:75%;width:25%"></div>
+              <div class="zc-bh-overlap-highlight zc-bh-step2" style="left:37.5%;width:37.5%"></div>
+              <div class="zc-timeline-marker-lines-clip">
+              <div class="zc-marker zc-marker-green zc-marker-step2 zc-marker-drag" style="left:25%">
+                <div class="zc-marker-line"></div>
+                <div class="zc-marker-label">6am</div>
+              </div>
+              <div class="zc-marker zc-marker-blue zc-marker-step2 zc-marker-drag" style="left:37.5%">
+                <div class="zc-marker-line"></div>
+                <div class="zc-marker-label">9am</div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="zc-step2-legend">
+        <span class="zc-legend-item"><span class="zc-legend-line zc-legend-line-blue"></span> Amy</span>
+        <span class="zc-legend-item"><span class="zc-legend-line zc-legend-line-you"></span> You</span>
+        <span class="zc-legend-item"><span class="zc-legend-bh-swatch zc-legend-shared-hours-swatch"></span> Shared working hours</span>
+      </div>
+
+      <div class="zc-step2-hours-slot" id="zc-step2-hours-notice">
+        <div class="zc-schedule-hint zc-schedule-hint-outside" role="status">
+          <span class="zc-schedule-hint-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="zc-schedule-hint-text">6:00 AM PST is outside your working hours</span>
+        </div>
+      </div>
+
+      <div class="zc-step2-footer">
+        <button class="zc-btn zc-btn-generate">Generate reply</button>
+        <button class="zc-btn zc-btn-outline zc-btn-reset-soft">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
