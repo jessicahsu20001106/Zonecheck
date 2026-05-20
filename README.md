@@ -2,7 +2,7 @@
 
 <img width="1600" height="1000" alt="Zonecheck" src="https://github.com/user-attachments/assets/1c78e404-60c7-4c7d-a180-ddd738a53292" />
 
-Scheduling across time zones inside email is still surprisingly painful. Zonecheck helps users understand time zones, compare availability, and generate scheduling replies directly inside Gmail.
+Zonecheck is a Chrome extension that helps users understand time zones, compare availability, and generate scheduling replies directly inside Gmail.
 
 ---
 
@@ -60,7 +60,6 @@ https://youtu.be/cMa8GlSuhEY
 git clone https://github.com/jessicahsu20001106/zonecheck.git
 
 cd zonecheck
-<img width="1600" height="1000" alt="Zonecheck" src="https://github.com/user-attachments/assets/34f4caff-3fbd-4e40-852d-a30aca3f0d55" />
 
 npm install
 ```
