@@ -100,7 +100,7 @@ The extension does not:
 - permanently store personal email content externally
 
 Privacy Policy:
-https://jessicahsu.design/zonecheck-privacy-policy
+[https://jessicahsu.design/zonecheck-privacy-policy](https://jessicahsu.design/privacy-policy)
 
 ---
 
