@@ -1,4 +1,5 @@
-/* â”€â”€ Zonecheck â€” design system (Geist: see fonts.css + /fonts/*.woff2) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Zonecheck — modal UI styles (popover, timeline, buttons, dropdowns, layout).
+   Geist fonts: fonts.css + /fonts/*.woff2. Loaded via manifest: ["fonts.css", "styles.css"]. */
 
 :root {
   /* Relationship palette — dusty twilight (sender) vs warm copper (you); overlap = atmospheric blend */
@@ -30,6 +31,7 @@
   --zc-surface-2: #efefef;
   --zc-dropdown-bg: #ffffff;
   --zc-shadow: 0 0 0 1px rgba(0, 0, 0, 0.045), 0 14px 36px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.045);
+  --zc-shadow-popover: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 24px 56px rgba(0, 0, 0, 0.16), 0 8px 20px rgba(0, 0, 0, 0.1);
   --zc-chip-track-gap: 2px;
   --zc-glow:    0 0 0 1px rgba(255, 255, 255, 0.65) inset;
   --zc-mono:    "Geist Mono", ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
@@ -78,13 +80,13 @@
   /* Shared scheduling — cool blue → neutral → warm (warmth only here) */
   --zc-overlap-mutual: linear-gradient(
     90deg,
-    rgba(109, 143, 173, 0.32) 0%,
-    rgba(122, 145, 171, 0.18) 20%,
-    rgba(175, 178, 182, 0.08) 42%,
-    rgba(190, 192, 196, 0.06) 54%,
-    rgba(210, 202, 190, 0.24) 68%,
-    rgba(218, 192, 158, 0.36) 82%,
-    rgba(196, 146, 106, 0.32) 100%
+    rgba(109, 143, 173, 0.44) 0%,
+    rgba(122, 145, 171, 0.28) 20%,
+    rgba(175, 178, 182, 0.16) 42%,
+    rgba(190, 192, 196, 0.12) 54%,
+    rgba(210, 202, 190, 0.34) 68%,
+    rgba(218, 192, 158, 0.48) 82%,
+    rgba(196, 146, 106, 0.44) 100%
   );
 
   /* Guidance — soft warm beige (integrated notification surface) */
@@ -126,7 +128,7 @@
   width: 380px;
   background: var(--zc-bg);
   border: 0.5px solid var(--zc-border);
-  box-shadow: var(--zc-shadow);
+  box-shadow: var(--zc-shadow-popover);
   font-family: var(--zc-sans);
   font-size: 13px;
   color: var(--zc-text);
@@ -147,7 +149,7 @@
   overflow: hidden;
   font-family: var(--zc-sans);
   background: var(--zc-modal-bg);
-  box-shadow: var(--zc-shadow);
+  box-shadow: var(--zc-shadow-popover);
   isolation: isolate;
   text-rendering: optimizeLegibility;
 }
@@ -160,7 +162,7 @@
   overflow: hidden;
   font-family: var(--zc-sans);
   background: var(--zc-modal-bg);
-  box-shadow: var(--zc-shadow);
+  box-shadow: var(--zc-shadow-popover);
   isolation: isolate;
 }
 
@@ -201,7 +203,7 @@
 }
 
 .zc-popover.zc-popover-dragging {
-  box-shadow: var(--zc-shadow), 0 28px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--zc-shadow-popover), 0 32px 72px rgba(0, 0, 0, 0.18);
 }
 
 .zc-popover.zc-popover-dragging .zc-header {
@@ -275,15 +277,25 @@
 }
 
 .zc-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  margin: -6px -8px -6px 0;
+  padding: 0;
   background: none;
   border: none;
+  border-radius: 8px;
   font-size: 18px;
   line-height: 1;
   color: var(--zc-muted);
   cursor: pointer;
-  padding: 0 2px;
 }
-.zc-close:hover { color: var(--zc-text); }
+.zc-close:hover {
+  color: var(--zc-text);
+  background: rgba(0, 0, 0, 0.04);
+}
 
 .zc-text-btn {
   background: none;
@@ -1536,12 +1548,12 @@
   min-height: 0;
   padding: 6px 10px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.01em;
   background: var(--zc-btn-tertiary-bg);
   border-color: var(--zc-btn-tertiary-border);
   box-shadow: none;
-  color: var(--zc-btn-tertiary-text);
+  color: var(--zc-muted);
 }
 
 .zc-btn-yes-soft {
@@ -1584,7 +1596,7 @@
   opacity: 1;
   background: var(--zc-btn-tertiary-hover);
   border-color: var(--zc-btn-tertiary-border) !important;
-  color: var(--zc-muted);
+  color: var(--zc-text);
   box-shadow: none;
 }
 
@@ -1601,10 +1613,10 @@
 
 .zc-btn-suggest-soft {
   background: var(--zc-btn-tertiary-bg);
-  color: var(--zc-btn-tertiary-text);
+  color: var(--zc-muted);
   border-color: var(--zc-btn-tertiary-border);
   box-shadow: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .zc-btn-generate {

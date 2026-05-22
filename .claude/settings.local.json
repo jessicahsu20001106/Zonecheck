@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp:*)",
+      "mcp__3442dfbc-64af-4eb5-999e-61854b37d1de__getProjectXml",
+      "Bash(curl -s http://127.0.0.1:29979/mcp -X POST -H \"Content-Type: application/json\" -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/list\",\"params\":{}}')",
+      "mcp__paper__get_guide",
+      "mcp__paper__get_basic_info",
+      "mcp__paper__create_artboard",
+      "mcp__paper__write_html",
+      "mcp__paper__finish_working_on_nodes",
+      "mcp__paper__get_selection",
+      "mcp__paper__get_font_family_info",
+      "mcp__paper__get_screenshot",
+      "mcp__paper__delete_nodes",
+      "mcp__paper__update_styles",
+      "Bash(cp /Users/jessica/Downloads/files/content.js /Users/jessica/paper/content.js)",
+      "Bash(cp /Users/jessica/Downloads/files/styles.css /Users/jessica/paper/styles.css)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__browser_batch"
+    ]
+  }
+}

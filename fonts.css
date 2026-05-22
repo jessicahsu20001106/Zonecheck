@@ -1,5 +1,6 @@
-/* Bundled Geist + Geist Mono — loaded via chrome-extension URL (see font-loader.js + manifest).
-   Explicit weights: variable woff2 + single "100 900" range is unreliable in some hosts; duplicate faces per weight fix thin/synthetic rendering. */
+/* Zonecheck — fonts only (@font-face). Do not add modal/UI styles here.
+   Loaded via font-loader.js (document_start) and manifest content_scripts.
+   UI styles live in styles.css. */
 
 /* ── Geist (latin) ── */
 @font-face {

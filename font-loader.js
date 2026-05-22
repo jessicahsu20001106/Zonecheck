@@ -1,5 +1,5 @@
 // Injected at document_start so Geist @font-face resolves from chrome-extension://
-// before Gmail paints. (Manifest CSS url() can resolve incorrectly on some hosts.)
+// before Gmail paints. UI styles are in styles.css (manifest content_scripts).
 
 (function () {
   if (typeof chrome === "undefined" || !chrome.runtime?.getURL) return;
