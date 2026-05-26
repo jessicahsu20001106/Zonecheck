@@ -2,7 +2,10 @@
 
 <img width="1600" height="1000" alt="Zonecheck" src="https://github.com/user-attachments/assets/1c78e404-60c7-4c7d-a180-ddd738a53292" />
 
-Zonecheck is a Chrome extension that helps users understand time zones, compare availability, and generate scheduling replies directly inside Gmail.
+Zonecheck is an AI-powered Chrome extension that helps users understand time zones, compare availability, and generate scheduling replies directly inside Gmail.
+
+Now available on the Chrome Web Store:  
+https://chromewebstore.google.com/detail/iadkodaihejbcbpkihodonkhmkmmdjjg
 
 ---
 
@@ -41,13 +44,12 @@ Zonecheck is a Chrome extension that helps users understand time zones, compare 
 - Anthropic Claude API
 - Gmail Content Scripts
 
-
-
 ---
 
 ## Demo
 
-Chrome Web Store release currently under review.
+Chrome Web Store:
+https://chromewebstore.google.com/detail/iadkodaihejbcbpkihodonkhmkmmdjjg?utm_source=item-share-cb
 
 Demo video:
 https://youtu.be/cMa8GlSuhEY
@@ -81,7 +83,6 @@ chrome://extensions
 Zonecheck uses the following permissions:
 
 - `storage`
-- `activeTab`
 - `clipboardWrite`
 
 Host permissions:
@@ -100,13 +101,13 @@ The extension does not:
 - permanently store personal email content externally
 
 Privacy Policy:
-[https://jessicahsu.design/zonecheck-privacy-policy](https://jessicahsu.design/privacy-policy)
+https://jessicahsu.design/privacy-policy
 
 ---
 
 ## Status
 
-Currently under Chrome Web Store review.
+Published on the Chrome Web Store
 
 ---
 
